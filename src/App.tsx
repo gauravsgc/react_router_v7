@@ -5,6 +5,9 @@ import ErrorPage from "./Pages/ErrorPage";
 // import Nav from "./components/Nav";
 import { Navigate } from "react-router";
 import NavActive from "./components/NavActive";
+import Product from "./Pages/Product";
+import RetailProduct from "./Pages/RetailProduct";
+import CompanyProduct from "./Pages/CompanyProduct";
 const Layout = () => {
   return (
     <div>
@@ -23,6 +26,14 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/contact", element: <Contact /> },
+         { path: "/product",
+           element: <Product />,
+          children:[
+            {path:'true', element:<Navigate to='retail' />},
+            { path: 'retail', element: <RetailProduct /> },
+            { path: 'company', element: <CompanyProduct /> }
+          ]
+        },
       { path: "radhe", element: <Navigate to="/" /> },
       { path: "*", element: <ErrorPage /> },
     ],
