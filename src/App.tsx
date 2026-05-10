@@ -8,6 +8,7 @@ import NavActive from "./components/NavActive";
 import Product from "./Pages/Product";
 import RetailProduct from "./Pages/RetailProduct";
 import CompanyProduct from "./Pages/CompanyProduct";
+import { Details } from "./Pages/Details";
 const Layout = () => {
   return (
     <div>
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
             { path: 'company', element: <CompanyProduct /> }
           ]
         },
+         { path: "/Details/:id", element: <Details /> },
       { path: "radhe", element: <Navigate to="/" /> },
       { path: "*", element: <ErrorPage /> },
     ],
